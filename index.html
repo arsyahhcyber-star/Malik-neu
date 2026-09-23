@@ -1,212 +1,158 @@
-<!DOCTYPE html>
-<html lang="id">
+<style>
+  /* ================================================
+   RESET CSS
+   Menghilangkan margin dan padding bawaan
+   serta membuat ukuran elemen lebih mudah diatur
+================================================ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-<head>
-  <meta charset="UTF-8">
+  /* ================================================
+   BODY
+   Mengatur font, warna background,
+   warna teks, ukuran halaman, dan jarak
+================================================ */
+  body {
+    font-family: Arial, sans-serif;
+    background: #e9eef5;
+    color: #1f2937;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px;
+    line-height: 1.6;
+  }
 
-  <!-- Membuat tampilan menyesuaikan ukuran layar -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  /* ================================================
+   HEADER DAN SECTION
+   Memberikan background putih,
+   sudut membulat, padding, jarak,
+   dan bayangan pada kotak
+================================================ */
+  header,
+  section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  }
 
-  <title>CV - Malik Neu Azzam Kharismansyah</title>
+  /* ================================================
+   HEADER
+   Mengatur posisi foto dan informasi
+   agar berada berdampingan
+================================================ */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #0b1f3a;
+    color: white;
+  }
 
-  <style>
-    /* Mengatur semua elemen agar margin dan padding lebih mudah dikontrol */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /* ================================================
+   FOTO PROFIL
+   Mengatur ukuran foto, bentuk lingkaran,
+   posisi gambar, dan border putih
+================================================ */
+  header img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+  }
 
-    /* Mengatur tampilan utama halaman */
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #e9eef5;
-      color: #1f2937;
+  /* ================================================
+   NAMA
+   Mengatur ukuran tulisan nama
+   dan jarak bagian bawah
+================================================ */
+  h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+  }
 
-      /* Lebar maksimal halaman */
-      max-width: 800px;
+  /* ================================================
+   INFORMASI KONTAK
+   Memberikan jarak atas dan warna
+   biru muda pada nomor HP
+================================================ */
+  .contact {
+    margin-top: 12px;
+    color: #dbeafe;
+  }
 
-      /* Membuat halaman berada di tengah */
-      margin: 30px auto;
+  /* ================================================
+   JUDUL SECTION
+   Mengatur warna judul dan memberikan
+   garis bawah pada setiap judul section
+================================================ */
+  h2 {
+    color: #0b1f3a;
+    border-bottom: 2px solid #173f73;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+  }
 
-      /* Jarak bagian kiri dan kanan */
-      padding: 0 15px;
+  /* ================================================
+   DAFTAR KEAHLIAN
+   Membuat keahlian tersusun dalam
+   3 kolom menggunakan CSS Grid
+================================================ */
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    list-style: none;
+  }
 
-      /* Jarak antar baris teks */
-      line-height: 1.6;
-    }
+  /* ================================================
+   KOTAK KEAHLIAN
+   Mengatur background, garis sebelah kiri,
+   padding, dan sudut kotak
+================================================ */
+  .skills li {
+    background: #edf3fa;
+    border-left: 4px solid #173f73;
+    padding: 12px;
+    border-radius: 6px;
+  }
 
-    /* Mengatur tampilan header dan section */
-    header,
-    section {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 20px;
+  /* ================================================
+   FOOTER
+   Mengatur warna background, warna teks,
+   posisi teks, padding, dan sudut kotak
+================================================ */
+  footer {
+    text-align: center;
+    background: #0b1f3a;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
 
-      /* Memberikan efek bayangan */
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    }
+  /* ================================================
+   RESPONSIVE / MEDIA QUERY
+   Digunakan ketika website dibuka
+   pada layar HP dengan lebar maksimal 600px
+================================================ */
+  @media (max-width: 600px) {
 
-    /* Mengatur bagian header */
+    /* Header berubah menjadi susunan vertikal */
     header {
-      display: flex;
-
-      /* Menempatkan isi secara vertikal di tengah */
-      align-items: center;
-
-      /* Jarak antara foto dan informasi */
-      gap: 25px;
-
-      /* Warna background header */
-      background: #0b1f3a;
-
-      /* Warna teks */
-      color: white;
-    }
-
-    /* Mengatur ukuran dan bentuk foto profil */
-    header img {
-      width: 140px;
-      height: 140px;
-
-      /* Foto tetap proporsional dan memenuhi area */
-      object-fit: cover;
-
-      /* Membuat foto menjadi lingkaran */
-      border-radius: 50%;
-
-      /* Memberikan garis putih pada foto */
-      border: 4px solid white;
-    }
-
-    /* Mengatur judul nama */
-    h1 {
-      font-size: 27px;
-      margin-bottom: 8px;
-    }
-
-    /* Mengatur informasi kontak */
-    .contact {
-      margin-top: 12px;
-      color: #dbeafe;
-    }
-
-    /* Mengatur judul setiap section */
-    h2 {
-      color: #0b1f3a;
-
-      /* Garis bawah judul */
-      border-bottom: 2px solid #173f73;
-
-      padding-bottom: 6px;
-      margin-bottom: 15px;
-    }
-
-    /* Mengatur daftar keahlian */
-    .skills {
-      display: grid;
-
-      /* Membuat 3 kolom */
-      grid-template-columns: repeat(3, 1fr);
-
-      /* Jarak antar item */
-      gap: 12px;
-
-      /* Menghilangkan tanda bullet */
-      list-style: none;
-    }
-
-    /* Mengatur setiap item keahlian */
-    .skills li {
-      background: #edf3fa;
-
-      /* Garis di sebelah kiri */
-      border-left: 4px solid #173f73;
-
-      padding: 12px;
-      border-radius: 6px;
-    }
-
-    /* Mengatur bagian footer */
-    footer {
+      flex-direction: column;
       text-align: center;
-      background: #0b1f3a;
-      color: white;
-      padding: 12px;
-      border-radius: 8px;
-      margin-top: 20px;
     }
 
-    /* Mengatur tampilan ketika layar berukuran kecil */
-    @media (max-width: 600px) {
-
-      /* Header berubah menjadi vertikal */
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      /* Keahlian ditampilkan menjadi satu kolom */
-      .skills {
-        grid-template-columns: 1fr;
-      }
+    /* Keahlian berubah menjadi 1 kolom */
+    .skills {
+      grid-template-columns: 1fr;
     }
-  </style>
-</head>
 
-<body>
-
-  <!-- Bagian header / identitas -->
-  <header>
-
-    <!-- Foto profil -->
-    <img src="1001708278.jpg" alt="Foto Malik Neu Azzam Kharismansyah">
-
-    <div>
-      <!-- Nama -->
-      <h1>Malik Neu Azzam Kharismansyah</h1>
-
-      <!-- Keterangan -->
-      <p>Curriculum Vitae</p>
-
-      <!-- Nomor HP -->
-      <p class="contact">
-        No. HP: 085846590595
-      </p>
-    </div>
-
-  </header>
-
-  <!-- Bagian tentang saya -->
-  <section>
-    <h2>Tentang Saya</h2>
-
-    <p>
-      Saya adalah pribadi yang tertarik dengan hal-hal yang baru,
-      dan saya senang untuk menjelajah daerah yang belum pernah saya
-      jelajahi dan mempelajari ilmu-ilmunya.
-    </p>
-  </section>
-
-  <!-- Bagian keahlian -->
-  <section>
-    <h2>Keahlian</h2>
-
-    <ul class="skills">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </section>
-
-  <!-- Bagian footer -->
-  <footer>
-    <p>
-      &copy; 2026 Malik Neu Azzam Kharismansyah
-    </p>
-  </footer>
-
-</body>
-
-</html>
+  }
+</style>
