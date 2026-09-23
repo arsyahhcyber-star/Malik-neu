@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Membuat tampilan menyesuaikan ukuran layar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CV - Malik Neu Azzam Kharismansyah</title>
+
+  <style>
+    /* Mengatur semua elemen agar margin dan padding lebih mudah dikontrol */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Mengatur tampilan utama halaman */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #e9eef5;
+      color: #1f2937;
+
+      /* Lebar maksimal halaman */
+      max-width: 800px;
+
+      /* Membuat halaman berada di tengah */
+      margin: 30px auto;
+
+      /* Jarak bagian kiri dan kanan */
+      padding: 0 15px;
+
+      /* Jarak antar baris teks */
+      line-height: 1.6;
+    }
+
+    /* Mengatur tampilan header dan section */
+    header,
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+
+      /* Memberikan efek bayangan */
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Mengatur bagian header */
+    header {
+      display: flex;
+
+      /* Menempatkan isi secara vertikal di tengah */
+      align-items: center;
+
+      /* Jarak antara foto dan informasi */
+      gap: 25px;
+
+      /* Warna background header */
+      background: #0b1f3a;
+
+      /* Warna teks */
+      color: white;
+    }
+
+    /* Mengatur ukuran dan bentuk foto profil */
+    header img {
+      width: 140px;
+      height: 140px;
+
+      /* Foto tetap proporsional dan memenuhi area */
+      object-fit: cover;
+
+      /* Membuat foto menjadi lingkaran */
+      border-radius: 50%;
+
+      /* Memberikan garis putih pada foto */
+      border: 4px solid white;
+    }
+
+    /* Mengatur judul nama */
+    h1 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    /* Mengatur informasi kontak */
+    .contact {
+      margin-top: 12px;
+      color: #dbeafe;
+    }
+
+    /* Mengatur judul setiap section */
+    h2 {
+      color: #0b1f3a;
+
+      /* Garis bawah judul */
+      border-bottom: 2px solid #173f73;
+
+      padding-bottom: 6px;
+      margin-bottom: 15px;
+    }
+
+    /* Mengatur daftar keahlian */
+    .skills {
+      display: grid;
+
+      /* Membuat 3 kolom */
+      grid-template-columns: repeat(3, 1fr);
+
+      /* Jarak antar item */
+      gap: 12px;
+
+      /* Menghilangkan tanda bullet */
+      list-style: none;
+    }
+
+    /* Mengatur setiap item keahlian */
+    .skills li {
+      background: #edf3fa;
+
+      /* Garis di sebelah kiri */
+      border-left: 4px solid #173f73;
+
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    /* Mengatur bagian footer */
+    footer {
+      text-align: center;
+      background: #0b1f3a;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* Mengatur tampilan ketika layar berukuran kecil */
+    @media (max-width: 600px) {
+
+      /* Header berubah menjadi vertikal */
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      /* Keahlian ditampilkan menjadi satu kolom */
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bagian header / identitas -->
+  <header>
+
+    <!-- Foto profil -->
+    <img src="1001708278.jpg" alt="Foto Malik Neu Azzam Kharismansyah">
+
+    <div>
+      <!-- Nama -->
+      <h1>Malik Neu Azzam Kharismansyah</h1>
+
+      <!-- Keterangan -->
+      <p>Curriculum Vitae</p>
+
+      <!-- Nomor HP -->
+      <p class="contact">
+        No. HP: 085846590595
+      </p>
+    </div>
+
+  </header>
+
+  <!-- Bagian tentang saya -->
+  <section>
+    <h2>Tentang Saya</h2>
+
+    <p>
+      Saya adalah pribadi yang tertarik dengan hal-hal yang baru,
+      dan saya senang untuk menjelajah daerah yang belum pernah saya
+      jelajahi dan mempelajari ilmu-ilmunya.
+    </p>
+  </section>
+
+  <!-- Bagian keahlian -->
+  <section>
+    <h2>Keahlian</h2>
+
+    <ul class="skills">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
+
+  <!-- Bagian footer -->
+  <footer>
+    <p>
+      &copy; 2026 Malik Neu Azzam Kharismansyah
+    </p>
+  </footer>
+
+</body>
+
+</html>
